@@ -767,3 +767,483 @@ Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5dec
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-21 12:40:42 -0700
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2016-06-21 12:51:40 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#new as HTML
+  Rendered movies/_form.html.erb (1.1ms)
+  Rendered movies/new.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.3ms)
+
+SyntaxError (/home/tristan/LHL/w5/rotten_mangoes/app/views/movies/_form.html.erb:40: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/movies/_form.html.erb:40: syntax error, unexpected keyword_ensure, expecting end-of-input
+  app/views/movies/new.html.erb:4:in `_app_views_movies_new_html_erb___730677733325914408_38038920'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.7ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.0ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (30.2ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2016-06-21 12:51:40 -0700
+Processing by MoviesController#new as HTML
+  Rendered movies/_form.html.erb (2.4ms)
+  Rendered movies/new.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/tristan/LHL/w5/rotten_mangoes/app/views/movies/_form.html.erb:40: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/movies/_form.html.erb:40: syntax error, unexpected keyword_ensure, expecting end-of-input
+  app/views/movies/new.html.erb:4:in `_app_views_movies_new_html_erb___730677733325914408_26492820'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.7ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (31.4ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2016-06-21 12:52:07 -0700
+Processing by MoviesController#new as HTML
+  Rendered movies/_form.html.erb (25.4ms)
+  Rendered movies/new.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 295ms (Views: 293.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-21 12:52:08 -0700
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-21 12:52:08 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-21 12:52:08 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-21 12:52:08 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-21 12:52:08 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-21 12:52:08 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-21 12:52:08 -0700
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-21 12:52:10 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+iYPZ+MA9q40Bh+1Od7GPg464g1Y9HKaDb7qGEv3GO6P5k6owsw3vZeWzN+k2Hf7HCfF9zClTWlbfQ54ly3TgQ==", "movie"=>{"title"=>"", "release_date"=>"", "director"=>"", "runtime_in_minutes"=>"", "poster_image_url"=>"", "description"=>""}, "commit"=>"Submit"}
+Unpermitted parameter: description
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered movies/_form.html.erb (8.2ms)
+  Rendered movies/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 60ms (Views: 49.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-21 12:52:19 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PckkABtuTLX8AsWvxo3OZtvXeisYseQG7SrdTKObq95ICWXPOqKNpl+SFsVbi3+jycpd0XDg2/W76Tksf0FgsQ==", "movie"=>{"title"=>"1", "release_date"=>"", "director"=>"1", "runtime_in_minutes"=>"1", "poster_image_url"=>"1", "description"=>"1"}, "commit"=>"Submit"}
+Unpermitted parameter: description
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered movies/_form.html.erb (13.1ms)
+  Rendered movies/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 63ms (Views: 50.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-21 12:52:36 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uoY8D3bPhrG87fU28zCzPDoM/TBmH/KpXGqLaUh2wuXPRn3AVwNHoh99JlxuNgL5KBHayg5OzVoKqW8JlKwJig==", "movie"=>{"title"=>"q", "release_date"=>"", "director"=>"1", "runtime_in_minutes"=>"1", "poster_image_url"=>"1", "description"=>"123"}, "commit"=>"Submit"}
+Unpermitted parameter: description
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered movies/_form.html.erb (8.6ms)
+  Rendered movies/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 46ms (Views: 36.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-21 12:52:44 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hejuZg5j7VINfsl5hZANm5FUXGNQPUrCYe8aPi8lnoXwKK+pL68sQa7uGhMYlrxeg0l7mThsdTE3LP5e8/9V6g==", "movie"=>{"title"=>"q", "release_date"=>"", "director"=>"1", "runtime_in_minutes"=>"1", "poster_image_url"=>"1", "description"=>"asfdfsdafsdadfsafsda"}, "commit"=>"Submit"}
+Unpermitted parameter: description
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered movies/_form.html.erb (5.4ms)
+  Rendered movies/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 31ms (Views: 25.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-21 12:53:08 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tXXiM+1txrTgM2QQpsDlAC0e7Jb3Vxl2WsQxX0HfeBLAtaP8zKEHp0Ojt3o7xlTFPwPLbJ8GJoUMB9U/nQWzfQ==", "movie"=>{"title"=>"q", "release_date"=>"", "director"=>"1", "runtime_in_minutes"=>"1", "poster_image_url"=>"1", "description"=>"This is a description."}, "commit"=>"Submit"}
+Unpermitted parameter: description
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered movies/_form.html.erb (4.9ms)
+  Rendered movies/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 45ms (Views: 23.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-21 12:53:50 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D4QoS28y1m/in0bjrHY3npFO5+aXYCP8ekYKpXyjzRN6RGmETv4XfEEPlYkxcIZbg1PAHP8xHA8she7FoHkGfA==", "movie"=>{"title"=>"q", "release_date"=>"2016-06-15", "director"=>"1", "runtime_in_minutes"=>"1", "poster_image_url"=>"1", "description"=>"This is a description."}, "commit"=>"Submit"}
+Unpermitted parameter: description
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered movies/_form.html.erb (5.2ms)
+  Rendered movies/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 28ms (Views: 22.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-21 12:53:59 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qBC3WmhtczQ+jrJwFARVrYDAt+mVCU2tSNdiIw+iY5fd0PaVSaGyJ50eYRqJAuRokt2QE/1Ycl4eFIZD03io+A==", "movie"=>{"title"=>"q", "release_date"=>"2016-06-15", "director"=>"1", "runtime_in_minutes"=>"1", "poster_image_url"=>"1", "description"=>"asfdddddddssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"}, "commit"=>"Submit"}
+Unpermitted parameter: description
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered movies/_form.html.erb (5.4ms)
+  Rendered movies/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 27ms (Views: 22.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-21 12:55:59 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qBC3WmhtczQ+jrJwFARVrYDAt+mVCU2tSNdiIw+iY5fd0PaVSaGyJ50eYRqJAuRokt2QE/1Ycl4eFIZD03io+A==", "movie"=>{"title"=>"q", "release_date"=>"2016-06-15", "director"=>"1", "runtime_in_minutes"=>"1", "poster_image_url"=>"1", "description"=>"asfdddddddssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"}, "commit"=>"Submit"}
+Unpermitted parameter: description
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered movies/_form.html.erb (10.8ms)
+  Rendered movies/new.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 252ms (Views: 229.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-21 12:56:00 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-21 12:56:00 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-21 12:56:00 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-21 12:56:00 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-21 12:56:00 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-21 12:56:00 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-21 12:56:00 -0700
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-21 12:56:02 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pei5G3vpZdfvsHGW22L+ZbwG+BZRPIsu8MJzdeSlySHQKPjUWiWkxEwgovxGZE+grhvf7DlttN2mAZcVOH8CTg==", "movie"=>{"title"=>"q", "release_date"=>"2016-06-15", "director"=>"1", "runtime_in_minutes"=>"1", "poster_image_url"=>"1", "description"=>"ddf"}, "commit"=>"Submit"}
+Unpermitted parameter: description
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered movies/_form.html.erb (4.2ms)
+  Rendered movies/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 44ms (Views: 39.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-21 12:56:04 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KIruIP/dqwc8y3P9xWOghN/HP8ruldCivsS2YLnPXhpdSq/v3hFqFJ9boJdYZRFBzdoYMIbE71HoB1IAZRWVdQ==", "movie"=>{"title"=>"q", "release_date"=>"2016-06-15", "director"=>"1", "runtime_in_minutes"=>"1", "poster_image_url"=>"1", "description"=>""}, "commit"=>"Submit"}
+Unpermitted parameter: description
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered movies/_form.html.erb (4.1ms)
+  Rendered movies/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 23ms (Views: 18.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-21 12:56:11 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IzadKHduXF2e2x2+1rjsm9rxH3rXwowTAHRm3TMr76pW9tznVqKdTj1LztRLvl1eyOw4gL+Ts+BWt4K97/EkxQ==", "movie"=>{"title"=>"q", "release_date"=>"2016-06-15", "director"=>"1", "runtime_in_minutes"=>"1", "poster_image_url"=>"1", "description"=>"Hello Squirrels"}, "commit"=>"Submit"}
+Unpermitted parameter: description
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered movies/_form.html.erb (2.3ms)
+  Rendered movies/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-21 13:01:42 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 195ms (Views: 186.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-21 13:01:43 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-21 13:01:43 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-21 13:01:43 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-21 13:01:43 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-21 13:01:43 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-21 13:01:43 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-21 13:01:43 -0700
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2016-06-21 13:01:45 -0700
+Processing by MoviesController#new as HTML
+  Rendered movies/_form.html.erb (29.9ms)
+  Rendered movies/new.html.erb within layouts/application (36.8ms)
+Completed 200 OK in 74ms (Views: 72.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-21 13:01:50 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sZImR/Ly8p82tIbkUsNdFaxfuKxPHkNf38N8+8s5ms3EUmeI0z4zjJUkVY7PxezQvkKfVidPfKyJAJibF+NRog==", "movie"=>{"title"=>"", "release_date"=>"", "director"=>"", "runtime_in_minutes"=>"", "poster_image_url"=>"", "description"=>"Hello, squirrels!"}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered movies/_form.html.erb (14.5ms)
+  Rendered movies/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 54ms (Views: 42.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-21 13:04:17 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sZImR/Ly8p82tIbkUsNdFaxfuKxPHkNf38N8+8s5ms3EUmeI0z4zjJUkVY7PxezQvkKfVidPfKyJAJibF+NRog==", "movie"=>{"title"=>"", "release_date"=>"", "director"=>"", "runtime_in_minutes"=>"", "poster_image_url"=>"", "description"=>"Hello, squirrels!"}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered movies/_form.html.erb (11.2ms)
+  Rendered movies/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 50ms (Views: 38.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-21 13:04:17 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-21 13:04:17 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-21 13:04:17 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-21 13:04:17 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-21 13:04:17 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-21 13:04:17 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-21 13:04:17 -0700
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-21 13:04:38 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2F4DxV1Wf1I7+iS8kvMEHT3Z+86eHmXEQVs3lG2YV3StnkIKfJq+QZhq99YP9bXYL8TcNPZPWjcXmNP0sUKcGw==", "movie"=>{"title"=>"Squirrel Movie", "release_date"=>"", "director"=>"", "runtime_in_minutes"=>"", "poster_image_url"=>"", "description"=>"Hello, squirrels!"}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered movies/_form.html.erb (6.7ms)
+  Rendered movies/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 49ms (Views: 25.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-21 13:04:43 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wXkOywotw2ca2vUnsEopIjcrBwinvMf4RpH/P5h0H2W0uU8EK+ECdLlKJk0tTJjnJTYg8s/t+AsQUhtfRK7UCg==", "movie"=>{"title"=>"Squirrel Movie", "release_date"=>"", "director"=>"", "runtime_in_minutes"=>"93", "poster_image_url"=>"", "description"=>"Hello, squirrels!"}, "commit"=>"Submit"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  Rendered movies/_form.html.erb (5.7ms)
+  Rendered movies/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 32ms (Views: 24.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-21 13:05:04 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/DHiPH5qJY+znMWDD5jPXsM7Sh0dUAN75LjjUqRe/YaJ8aPzX6bknBAMFumSnn6b0SZt53UBPIiyewcyeIQ26Q==", "movie"=>{"title"=>"Squirrel Movie", "release_date"=>"1991-08-11", "director"=>"Gus Van Sant", "runtime_in_minutes"=>"93", "poster_image_url"=>"i.imgur/random", "description"=>"Hello, squirrels!"}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("title", "release_date", "director", "runtime_in_minutes", "poster_image_url", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Squirrel Movie"], ["release_date", "1991-08-11 00:00:00.000000"], ["director", "Gus Van Sant"], ["runtime_in_minutes", 93], ["poster_image_url", "i.imgur/random"], ["description", "Hello, squirrels!"], ["created_at", "2016-06-21 20:05:04.185296"], ["updated_at", "2016-06-21 20:05:04.185296"]]
+  [1m[36m (18.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 26ms (ActiveRecord: 18.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2016-06-21 13:05:04 -0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/i.imgur/random" for 127.0.0.1 at 2016-06-21 13:05:04 -0700
+
+ActionController::RoutingError (No route matches [GET] "/images/i.imgur/random"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/tristan/.rvm/rubies/ruby-2.3.0-stable/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/tristan/.rvm/rubies/ruby-2.3.0-stable/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/tristan/.rvm/rubies/ruby-2.3.0-stable/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.8ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (40.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.7ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (34.3ms)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2016-06-21 13:05:06 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered movies/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 48ms (Views: 36.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/i.imgur/random" for 127.0.0.1 at 2016-06-21 13:05:06 -0700
+
+ActionController::RoutingError (No route matches [GET] "/images/i.imgur/random"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/tristan/.rvm/rubies/ruby-2.3.0-stable/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/tristan/.rvm/rubies/ruby-2.3.0-stable/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/tristan/.rvm/rubies/ruby-2.3.0-stable/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (25.0ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.0ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (30.7ms)
+
+
+Started GET "/movies/2/edit" for 127.0.0.1 at 2016-06-21 13:05:08 -0700
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered movies/_form.html.erb (7.7ms)
+  Rendered movies/edit.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 34ms (Views: 32.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/movies/2" for 127.0.0.1 at 2016-06-21 13:08:03 -0700
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CC4f6ljxdQZkcnUWporQULrJKfjFqXkVyHkwZB3Qfx597l4leT20Fcfipnw7jGGVqNQOAq34RuaeutQEwQq0cQ==", "movie"=>{"title"=>"Squirrel Movie", "release_date"=>"1991-08-11", "director"=>"Gus Van Sant", "runtime_in_minutes"=>"93", "poster_image_url"=>"http://i.imgur.com/7JVQgpN.jpg", "description"=>"Hello, squirrels!"}, "commit"=>"Submit", "id"=>"2"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "movies" SET "poster_image_url" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["poster_image_url", "http://i.imgur.com/7JVQgpN.jpg"], ["updated_at", "2016-06-21 20:08:03.832374"], ["id", 2]]
+  [1m[35m (32.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies/2
+Completed 302 Found in 38ms (ActiveRecord: 33.0ms)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2016-06-21 13:08:03 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered movies/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2016-06-21 13:08:04 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMovie Load (0.4ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered movies/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 47ms (Views: 45.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2016-06-21 13:08:06 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered movies/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.5ms)
