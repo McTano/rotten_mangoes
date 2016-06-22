@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'users/create'
 
-  root to: 'movies#index'
+  root 'movies#index'
   resources :movies do
     resources :reviews, only: [:new, :create]
   end
