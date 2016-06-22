@@ -5,7 +5,7 @@ one:
   director: MyString
   runtime_in_minutes: 1
   description: MyText
-  poster_image_url: MyString
+  poster_image: MyString
   release_date: 2016-06-21 11:03:46
 
 two:
@@ -13,5 +13,5 @@ two:
   director: MyString
   runtime_in_minutes: 1
   description: MyText
-  poster_image_url: MyString
+  poster_image: MyString
   release_date: 2016-06-21 11:03:46

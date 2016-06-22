@@ -1,8 +1,13 @@
 class Movie < ActiveRecord::Base
 
+  mount_uploader :poster_image, ImageUploader
+
+  validates_processing_of :poster_image
+  validate :poster_image_size_validation
+
   has_many :reviews
 
-  validates_presence_of :title, :director, :poster_image_url, :release_date
+  validates_presence_of :title, :director, :release_date
 
   validates :runtime_in_minutes,
     numericality: { only_integer: true }
@@ -22,6 +27,11 @@ class Movie < ActiveRecord::Base
     if release_date.present?
       errors.add(:release_date, "should be in the past") if release_date > Date.today
     end
+  end
+
+  private
+  def poster_image_size_validation
+    errors[:poster_image] << "should be less than 500KB" if poster_image.size > 0.5.megabytes
   end
 
 end
