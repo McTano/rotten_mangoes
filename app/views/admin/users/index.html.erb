@@ -1,0 +1,4 @@
+<% @users.each do |user| %>
+  <h2><%= user.full_name %> (<%= user.email %>)</h2>
+  <p><%= link_to "Terminate Existence", { action: :destroy, id: user.id }, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<% end %>
