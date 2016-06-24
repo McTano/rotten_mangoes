@@ -17,5 +17,5 @@
   <% end %>
   <p><%= link_to "Write a review!", new_movie_review_path(@movie) %></p>
 <% else %>
-  <p>Please <%= link_to "log in", new_session_path %> to see reviews and add your own.</p> 
+  <p>Please <%= link_to "log in", new_sessions_path %> to see reviews and add your own.</p> 
 <% end %>
