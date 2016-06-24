@@ -1,0 +1,6 @@
+  <%= link_to image_tag(movie.poster_image.medium), movie_path(movie) %>
+  <h2><%= link_to movie.title, movie_path(movie) %> | <%= movie.review_average %>/10</h2>
+  <h3><%= formatted_date(movie.release_date) %></h3>
+  <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
+  <p><%= movie.description %></p>
+  <hr>

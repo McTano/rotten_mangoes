@@ -13,5 +13,4 @@ class Admin::UsersController < ApplicationController
     UserMailer.deletion_email(@user).deliver_now
     redirect_to '/admin/users'
   end
-
 end

@@ -26,7 +26,7 @@ class Movie < ActiveRecord::Base
       where("runtime_in_minutes < ?", max)
     end
     
-    def runtime_between(min, max) 
+    def runtime_between(min, max)
       where(runtime_in_minutes: (min)..(max))
     end
 
