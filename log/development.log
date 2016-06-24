@@ -17645,3 +17645,371 @@ Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:57:17 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-24 12:35:59 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 4]]
+  Rendered movies/index.html.erb within layouts/application (32.6ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 333ms (Views: 317.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2016-06-24 12:36:05 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 38ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-06-24 12:36:07 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jrKzqxOH8RuGQr5sdifhZKHhrITjH2liuSw13TsW9ueWQNfWciI/AVG+TXNxKH/tKD7GAiW/yf0v03eLF+WmZQ==", "email"=>"brian@admin", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "brian@admin"]]
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 116ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2016-06-24 12:36:07 -0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 4]]
+  Rendered movies/index.html.erb within layouts/application (6.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-06-24 12:36:11 -0700
+Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered admin/users/index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/admin/users/2" for 127.0.0.1 at 2016-06-24 12:36:23 -0700
+Processing by Admin::UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ToO0dxOabPaAUwBjrzSiZG7X8E5VAVqSQeXW1sc1vPNWcdAKcj+i7Fev83yoOzzt5wiayJOh+g3XGpSA68bscQ==", "id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[35m (11.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/admin/users
+Completed 302 Found in 32ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-06-24 12:36:23 -0700
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered admin/users/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-06-24 12:41:12 -0700
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered admin/users/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 30.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 12:41:12 -0700
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 12:41:12 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 12:41:12 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 12:41:12 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 12:41:12 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 12:41:12 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 12:41:12 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 12:41:12 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 12:41:12 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 12:41:12 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 12:41:12 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 12:41:12 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 12:41:12 -0700
+
+
+Started DELETE "/admin/users/3" for 127.0.0.1 at 2016-06-24 12:41:16 -0700
+Processing by Admin::UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tDfiiDe30P7oyNRgR4rQP4UB5XfNrCjV+xc+INwSg/GsxYb1VhIe5D80J39AhU62DN6P8QsMiEpt6Hx28OHTcw==", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 3]]
+  [1m[36m (12.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/admin/users
+Completed 302 Found in 34ms (ActiveRecord: 13.4ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-06-24 12:41:16 -0700
+Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered admin/users/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/admin/users/4" for 127.0.0.1 at 2016-06-24 12:41:48 -0700
+Processing by Admin::UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IXJqMaW4PxzHb9ytDuHtD0hv+5l0XoYNMOLu4y9RW/M5gA5MxB3xBhCTL7IJ7nOGwbCRH7L+JpKmHay1A6ILcQ==", "id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered user_mailer/deletion_email.html.erb within layouts/mailer (0.4ms)
+
+UserMailer#deletion_email: processed outbound mail in 119.5ms
+
+Sent mail to alfred@batman.com (5.7ms)
+Date: Fri, 24 Jun 2016 12:41:49 -0700
+From: from@example.com
+To: alfred@batman.com
+Message-ID: <576d8cfd6670_45f63fcf94b389241494d@Tristan-ThinkPad-T430s.mail>
+Subject: You were naughty
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Goodbye forever, Alfred Pennyworth</h1>
+    <p>
+      Your actions displeased Brian the Destroyer.<br>
+    </p>
+    <p>
+      As a result, you no longer exist.
+    </p>
+    <p>Have a blessed day.</p>
+  </body>
+</html>
+  </body>
+</html>
+
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  [1m[35m (22.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/admin/users
+Completed 302 Found in 176ms (ActiveRecord: 24.1ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-06-24 12:41:49 -0700
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered admin/users/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-06-24 12:42:58 -0700
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered admin/users/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 29ms (Views: 18.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 12:42:59 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 12:42:59 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 12:42:59 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 12:42:59 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 12:42:59 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 12:42:59 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 12:42:59 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 12:42:59 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 12:42:59 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 12:42:59 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 12:42:59 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 12:42:59 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 12:42:59 -0700
+
+
+Started DELETE "/admin/users/5" for 127.0.0.1 at 2016-06-24 12:43:02 -0700
+Processing by Admin::UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"C7j1cgeCq6Qa1kjMWLZeAiwQYA04iAjjYTZIgElQEaMTSpEPZidlvs0qu9NfucCLpc8Ki/4oqHz3yQrWZaNBIQ==", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 5]]
+  [1m[36m (11.2ms)[0m  [1mcommit transaction[0m
+  Rendered user_mailer/deletion_email.html.erb within layouts/mailer (0.1ms)
+
+UserMailer#deletion_email: processed outbound mail in 9.0ms
+
+Sent mail to oracle@batman.com (3.2ms)
+Date: Fri, 24 Jun 2016 12:43:02 -0700
+From: from@example.com
+To: oracle@batman.com
+Message-ID: <576d8d46b994a_45f63fcf968bb08c150d3@Tristan-ThinkPad-T430s.mail>
+Subject: You were naughty
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Goodbye forever, Barbara Gordon</h1>
+    <p>
+      Your actions displeased Brian the Destroyer.<br>
+    </p>
+    <p>
+      As a result, you no longer exist.
+    </p>
+    <p>Have a blessed day.</p>
+  </body>
+</html>
+  </body>
+</html>
+
+Redirected to http://localhost:3000/admin/users
+Completed 302 Found in 42ms (ActiveRecord: 11.7ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-06-24 12:43:02 -0700
+Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered admin/users/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-06-24 12:43:49 -0700
+Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered admin/users/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 44ms (Views: 33.6ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/admin/users/1" for 127.0.0.1 at 2016-06-24 12:43:58 -0700
+Processing by Admin::UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CD9GQO1b/esjkfKwFBjwaIqOdzh/2eNAamWij7P/KxYQzSI9jP4z8fRtAa8TF27hA1Edvrl5Q9/8muDZnwx7lA==", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[35m (12.7ms)[0m  commit transaction
+  Rendered user_mailer/deletion_email.html.erb within layouts/mailer (0.1ms)
+
+UserMailer#deletion_email: processed outbound mail in 10.1ms
+
+Sent mail to definitelynotbatman@batman.com (3.1ms)
+Date: Fri, 24 Jun 2016 12:43:58 -0700
+From: donotreply@rottenmangoes.biz
+To: definitelynotbatman@batman.com
+Message-ID: <576d8d7e4fea0_45f63fcf8a03e550151de@Tristan-ThinkPad-T430s.mail>
+Subject: You were naughty
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Goodbye forever, Bruce Wayne</h1>
+    <p>
+      Your actions displeased Brian the Destroyer.<br>
+    </p>
+    <p>
+      As a result, you no longer exist.
+    </p>
+    <p>Have a blessed day.</p>
+  </body>
+</html>
+  </body>
+</html>
+
+Redirected to http://localhost:3000/admin/users
+Completed 302 Found in 45ms (ActiveRecord: 13.3ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-06-24 12:43:58 -0700
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered admin/users/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.3ms)
