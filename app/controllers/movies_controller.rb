@@ -3,9 +3,9 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.all
     [:title, :director].each do |field|
-    @movies = @movies.where("UPPER(movies.?) LIKE UPPER(?)", field, "%#{params[field]}%") if params[field].present?
+    @movies = @movies.matches(field, "%#{params[field]}%".upcase) if params[field].present?
     end
-    @movies = @movies.where(selected_runtime)
+    @movies = selected_runtime(@movies)
   end
 
   def show
@@ -54,17 +54,16 @@ class MoviesController < ApplicationController
       )
   end
 
-  def selected_runtime
-    limit =
+  def selected_runtime(movies)
       case params[:runtime_in_minutes]
       when "Under 90 minutes"
-        "runtime_in_minutes < 90"
+        movies.runtime_under(90)
       when "Between 90 and 120 minutes"
-        "runtime_in_minutes BETWEEN 90 AND 120"
+        movies.runtime_between(90, 120)
       when "Over 120 minutes"
-        "runtime_in_minutes > 120"
+        movies.runtime_over(120)
       else
-        nil
+        movies
       end
   end
 

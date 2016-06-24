@@ -17,6 +17,25 @@ class Movie < ActiveRecord::Base
 
   validate :release_date_is_in_the_past
 
+  class << self
+    def matches(field, query)
+      where("UPPER(#{field}) LIKE ?", query)
+    end
+
+    def runtime_under(max)
+      where("runtime_in_minutes < ?", max)
+    end
+    
+    def runtime_between(min, max) 
+      where(runtime_in_minutes: (min)..(max))
+    end
+
+    def runtime_over(min)
+      where("runtime_in_minutes < ?", min)
+    end
+  end
+
+
   def review_average
     reviews.sum(:rating_out_of_ten)/reviews.size unless reviews.size == 0
   end
