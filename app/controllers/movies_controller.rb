@@ -2,6 +2,14 @@ class MoviesController < ApplicationController
   
   def index
     @movies = Movie.all
+    [:title, :director].each do |field|
+      if params[field].present?
+        @movies = @movies.where("UPPER(movies.?) LIKE UPPER(?)", field, "%#{params[field].upcase}%")
+      end
+    end
+    if params[:runtime_in_minutes].present?
+      @movies = @movies.where("runtime_in_minutes #{params[:runtime_in_minutes]}")
+    end
   end
 
   def show
