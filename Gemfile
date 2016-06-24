@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'rabl'
+gem 'responders'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

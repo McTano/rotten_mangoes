@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'movies#index'
+
   resources :movies do
     resources :reviews, only: [:new, :create]
   end
@@ -9,6 +10,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users
+  end
+
+  namespace :api do
+    resources :movies, only: [:index]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

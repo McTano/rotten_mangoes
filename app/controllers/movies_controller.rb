@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  
+
   def index
     @movies = Movie.all
     [:title, :director].each do |field|

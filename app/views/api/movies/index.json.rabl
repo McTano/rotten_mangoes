@@ -1,0 +1,2 @@
+collection @movies
+attributes :title
