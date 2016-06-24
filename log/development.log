@@ -15514,3 +15514,2134 @@ Processing by MoviesController#index as HTML
   Rendered movies/index.html.erb within layouts/application (5.7ms)
   Rendered layouts/_footer.html.erb (0.2ms)
 Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-24 11:01:05 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (29.9ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 315ms (Views: 298.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=%3E+120&commit=Search" for 127.0.0.1 at 2016-06-24 11:06:38 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"> 120", "commit"=>"Search"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (runtime_in_minutes > 120)[0m
+  Rendered movies/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 30ms (Views: 22.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=%3E+1&commit=Search" for 127.0.0.1 at 2016-06-24 11:07:14 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"> 1", "commit"=>"Search"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (runtime_in_minutes > 1)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (21.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 39ms (Views: 36.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=Bat&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:08:34 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"Bat", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%BAT%'))[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  Rendered movies/index.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:08:45 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:08:54 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%'))
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (17.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 55ms (Views: 46.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:08:55 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%'))[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:08:56 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%'))
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 37ms (Views: 35.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:09:16 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%'))[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (14.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 34.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:09:17 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:09:17 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:09:17 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:09:17 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:17 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:09:17 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:17 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:17 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:17 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:17 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:17 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:17 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:17 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:09:18 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%'))
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 38ms (Views: 36.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:09:18 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:09:18 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:09:18 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:09:18 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:09:18 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:18 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:18 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:18 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:18 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:18 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:18 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:18 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:18 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:09:30 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes )[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (13.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 37ms (Views: 30.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:09:30 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:09:30 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:09:30 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:09:30 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:09:30 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:30 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:30 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:30 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:30 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:30 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:30 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:30 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:09:30 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:09:42 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes )
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 34ms (Views: 32.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:09:44 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes )[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 38ms (Views: 35.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:17:02 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  Rendered movies/index.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/tristan/LHL/w5/rotten_mangoes/app/views/movies/index.html.erb:16: syntax error, unexpected '<', expecting ')'
+<%= select_tag(:runtime_in_minutes, options_for_select([ 
+ ^
+/home/tristan/LHL/w5/rotten_mangoes/app/views/movies/index.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/home/tristan/LHL/w5/rotten_mangoes/app/views/movies/index.html.erb:35: syntax error, unexpected keyword_ensure, expecting ')'
+/home/tristan/LHL/w5/rotten_mangoes/app/views/movies/index.html.erb:37: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/movies/index.html.erb:16: syntax error, unexpected '<', expecting ')'
+  app/views/movies/index.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+  app/views/movies/index.html.erb:35: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/movies/index.html.erb:37: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.7ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (33.4ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:17:09 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes )
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (10.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:17:09 -0700
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:17:09 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:17:09 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:17:09 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:17:09 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:17:09 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:17:09 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:17:09 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:17:09 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:17:09 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:17:09 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:17:09 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:17:09 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:17:17 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:17:17 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:17:17 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:17:17 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:17:17 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:17:17 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:17:17 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:17:17 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:17:17 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:17:17 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:17:17 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:17:17 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:17:17 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:17:17 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:22:26 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes )
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (8.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 47ms (Views: 44.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:22:26 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:22:26 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:22:26 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:22:26 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:22:26 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:22:26 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:22:26 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:22:26 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:22:26 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:22:26 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:22:26 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:22:26 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:22:26 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:28:10 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%'))[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (13.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 55ms (Views: 45.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:28:10 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:28:10 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:28:10 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:28:10 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:28:10 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:28:10 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:28:10 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:28:10 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:28:10 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:28:10 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:28:10 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:28:10 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:28:10 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=Under+90+minutes&commit=Search" for 127.0.0.1 at 2016-06-24 11:28:13 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"Under 90 minutes", "commit"=>"Search"}
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes < 90)
+  Rendered movies/index.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=Over+120+minutes&commit=Search" for 127.0.0.1 at 2016-06-24 11:28:32 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"Over 120 minutes", "commit"=>"Search"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes > 120)[0m
+  Rendered movies/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 36ms (Views: 34.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=Between+90+and+120+minutes&commit=Search" for 127.0.0.1 at 2016-06-24 11:28:35 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"Between 90 and 120 minutes", "commit"=>"Search"}
+  [1m[35mMovie Load (1.6ms)[0m  SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes BETWEEN(90, 120))
+  Rendered movies/index.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.6ms)
+
+ActionView::Template::Error (SQLite3::SQLException: near ",": syntax error: SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes BETWEEN(90, 120))):
+    25: </div>
+    26: <% end %>
+    27: <hr>
+    28: <% @movies.each do |movie| %>
+    29:   <%= link_to image_tag(movie.poster_image.medium), movie_path(movie) %>
+    30:   <h2><%= link_to movie.title, movie_path(movie) %> | <%= movie.review_average %>/10</h2>
+    31:   <h3><%= formatted_date(movie.release_date) %></h3>
+  app/views/movies/index.html.erb:28:in `_app_views_movies_index_html_erb__230953323226366319_70110622700540'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (25.9ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.1ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (29.3ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=Between+90+and+120+minutes&commit=Search" for 127.0.0.1 at 2016-06-24 11:29:28 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"Between 90 and 120 minutes", "commit"=>"Search"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes BETWEEN 90 AND 120)[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (15.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 47ms (Views: 38.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:29:28 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:29:28 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:29:28 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:29:28 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:29:28 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:29:28 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:29:28 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:29:28 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:29:28 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:29:28 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:29:28 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:29:28 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:29:28 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=Between+90+and+120+minutes&commit=Search" for 127.0.0.1 at 2016-06-24 11:29:31 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"Between 90 and 120 minutes", "commit"=>"Search"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes BETWEEN 90 AND 120)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 46ms (Views: 44.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=Over+120+minutes&commit=Search" for 127.0.0.1 at 2016-06-24 11:29:35 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"Over 120 minutes", "commit"=>"Search"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes > 120)[0m
+  Rendered movies/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=Over+120+minutes&commit=Search" for 127.0.0.1 at 2016-06-24 11:32:46 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"Over 120 minutes", "commit"=>"Search"}
+  [1m[35mMovie Load (0.7ms)[0m  SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime in minutes runtime_in_minutes > 120)
+  Rendered movies/index.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (SQLite3::SQLException: near "runtime_in_minutes": syntax error: SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime in minutes runtime_in_minutes > 120)):
+    25: </div>
+    26: <% end %>
+    27: <hr>
+    28: <% @movies.each do |movie| %>
+    29:   <%= link_to image_tag(movie.poster_image.medium), movie_path(movie) %>
+    30:   <h2><%= link_to movie.title, movie_path(movie) %> | <%= movie.review_average %>/10</h2>
+    31:   <h3><%= formatted_date(movie.release_date) %></h3>
+  app/views/movies/index.html.erb:28:in `_app_views_movies_index_html_erb__230953323226366319_70110622700540'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.1ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.7ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (30.5ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=Over+120+minutes&commit=Search" for 127.0.0.1 at 2016-06-24 11:33:09 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"Over 120 minutes", "commit"=>"Search"}
+  [1m[36mMovie Load (0.8ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime in minutes > 120)[0m
+  Rendered movies/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: minutes: SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime in minutes > 120)):
+    25: </div>
+    26: <% end %>
+    27: <hr>
+    28: <% @movies.each do |movie| %>
+    29:   <%= link_to image_tag(movie.poster_image.medium), movie_path(movie) %>
+    30:   <h2><%= link_to movie.title, movie_path(movie) %> | <%= movie.review_average %>/10</h2>
+    31:   <h3><%= formatted_date(movie.release_date) %></h3>
+  app/views/movies/index.html.erb:28:in `_app_views_movies_index_html_erb__230953323226366319_70110622700540'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (28.1ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=Over+120+minutes&commit=Search" for 127.0.0.1 at 2016-06-24 11:33:20 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"Over 120 minutes", "commit"=>"Search"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes > 120)
+  Rendered movies/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 20.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:33:20 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:33:20 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:33:20 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:33:20 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:33:20 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:33:20 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:33:20 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:33:20 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:33:20 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:33:20 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:33:20 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:33:20 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:33:20 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=Between+90+and+120+minutes&commit=Search" for 127.0.0.1 at 2016-06-24 11:33:23 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"Between 90 and 120 minutes", "commit"=>"Search"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes BETWEEN 90 AND 120)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (17.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 39.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:33:25 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes )
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:33:26 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes )[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=Over+120+minutes&commit=Search" for 127.0.0.1 at 2016-06-24 11:33:28 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"Over 120 minutes", "commit"=>"Search"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes > 120)
+  Rendered movies/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=Under+90+minutes&commit=Search" for 127.0.0.1 at 2016-06-24 11:33:30 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"Under 90 minutes", "commit"=>"Search"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes < 90)[0m
+  Rendered movies/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=Between+90+and+120+minutes&commit=Search" for 127.0.0.1 at 2016-06-24 11:33:31 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"Between 90 and 120 minutes", "commit"=>"Search"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes BETWEEN 90 AND 120)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:33:32 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes )[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:37:34 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes )
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (12.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 46ms (Views: 32.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:37:34 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:37:34 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:37:34 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:37:34 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:37:34 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:37:34 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:37:34 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:37:34 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:37:34 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:37:34 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:37:34 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:37:34 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:37:34 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:37:37 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes )[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2016-06-24 11:38:04 -0700
+Processing by MoviesController#new as HTML
+  Rendered movies/_form.html.erb (22.9ms)
+  Rendered movies/new.html.erb within layouts/application (25.1ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 49ms (Views: 48.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-24 11:38:46 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FTp9RUGPRzzYcLY/c7hy9/QNpM6/QMh1UCy1Vk+KkbMNyBk4ICqJJg+MRSB0t+x+fdLOSHngaOrG0/cAY3nBMQ==", "movie"=>{"title"=>"Dark Knight", "release_date"=>"2016-06-24", "director"=>"Leverage Power", "runtime_in_minutes"=>"", "poster_image"=>#<ActionDispatch::Http::UploadedFile:0x007f87d408d460 @tempfile=#<Tempfile:/tmp/RackMultipart20160624-14160-izzw8a.jpg>, @original_filename="great_houses.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"movie[poster_image]\"; filename=\"great_houses.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"No problemo"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered movies/_form.html.erb (3.2ms)
+  Rendered movies/new.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 345ms (Views: 21.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-24 11:40:27 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FTp9RUGPRzzYcLY/c7hy9/QNpM6/QMh1UCy1Vk+KkbMNyBk4ICqJJg+MRSB0t+x+fdLOSHngaOrG0/cAY3nBMQ==", "movie"=>{"title"=>"Dark Knight", "release_date"=>"2016-06-24", "director"=>"Leverage Power", "runtime_in_minutes"=>"", "poster_image"=>#<ActionDispatch::Http::UploadedFile:0x007f87cd791c68 @tempfile=#<Tempfile:/tmp/RackMultipart20160624-14160-cqmw30.jpg>, @original_filename="great_houses.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"movie[poster_image]\"; filename=\"great_houses.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"No problemo"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered movies/_form.html.erb (2.5ms)
+  Rendered movies/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 344ms (Views: 26.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:40:28 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:40:28 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:40:28 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:40:28 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:40:28 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:40:28 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:40:28 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:40:28 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:40:28 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:40:28 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:40:28 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:40:28 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:40:28 -0700
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-24 11:40:30 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rSimyaXrwO4hyBPsDHLkybocJBg5m5ti6kb5PCV0+rm12sK0xE4O9PY04PMLfXpAM8NOnv87O/18ubtqCYeqOw==", "movie"=>{"title"=>"Dark Knight", "release_date"=>"2016-06-24", "director"=>"Leverage Power", "runtime_in_minutes"=>"120", "description"=>"No problemo"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("title", "release_date", "director", "runtime_in_minutes", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Dark Knight"], ["release_date", "2016-06-24 00:00:00.000000"], ["director", "Leverage Power"], ["runtime_in_minutes", 120], ["description", "No problemo"], ["created_at", "2016-06-24 18:40:30.596377"], ["updated_at", "2016-06-24 18:40:30.596377"]]
+  [1m[35m (18.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies?notice=%7B%40movie.title%7D+was+submitted+successfully%21
+Completed 302 Found in 25ms (ActiveRecord: 19.3ms)
+
+
+Started GET "/movies?notice=%7B%40movie.title%7D+was+submitted+successfully%21" for 127.0.0.1 at 2016-06-24 11:40:30 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"notice"=>"{@movie.title} was submitted successfully!"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `upcase' for nil:NilClass):
+  app/controllers/movies_controller.rb:6:in `block in index'
+  app/controllers/movies_controller.rb:5:in `each'
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.0ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (29.3ms)
+
+
+Started GET "/movies?notice=%7B%40movie.title%7D+was+submitted+successfully%21" for 127.0.0.1 at 2016-06-24 11:40:53 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"notice"=>"{@movie.title} was submitted successfully!"}
+  [1m[36mMovie Load (0.6ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%'))[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 3]]
+  Rendered movies/index.html.erb within layouts/application (15.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 39ms (Views: 32.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:40:53 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:40:53 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:40:53 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:40:53 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:40:53 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:40:53 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:40:53 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:40:53 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:40:53 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:40:53 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:40:53 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:40:53 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:40:53 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=Over+120+minutes&commit=Search" for 127.0.0.1 at 2016-06-24 11:41:09 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"Over 120 minutes", "commit"=>"Search"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes > 120)[0m
+  Rendered movies/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=Under+90+minutes&commit=Search" for 127.0.0.1 at 2016-06-24 11:41:14 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"Under 90 minutes", "commit"=>"Search"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes < 90)
+  Rendered movies/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:41:16 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 3]]
+  Rendered movies/index.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2016-06-24 11:41:21 -0700
+Processing by MoviesController#new as HTML
+  Rendered movies/_form.html.erb (5.7ms)
+  Rendered movies/new.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2016-06-24 11:41:58 -0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s+l6XpxWcPnnokUt1Jx1SX1qJERht0UbldUQ5+3xZ5OrGx4j/fO+4zBetjLTk+vA9LVOwqcX5YQDKlKxwQI3EQ==", "movie"=>{"title"=>"A Mistake", "release_date"=>"2016-05-31", "director"=>"Lionel Problemo", "runtime_in_minutes"=>"1", "poster_image"=>#<ActionDispatch::Http::UploadedFile:0x007f87da0ab4f0 @tempfile=#<Tempfile:/tmp/RackMultipart20160624-14160-sforno.jpg>, @original_filename="mctano.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"movie[poster_image]\"; filename=\"mctano.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"Widely hailed as a disaster"}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "release_date", "director", "runtime_in_minutes", "poster_image", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["title", "A Mistake"], ["release_date", "2016-05-31 00:00:00.000000"], ["director", "Lionel Problemo"], ["runtime_in_minutes", 1], ["poster_image", "mctano.jpg"], ["description", "Widely hailed as a disaster"], ["created_at", "2016-06-24 18:41:58.437514"], ["updated_at", "2016-06-24 18:41:58.437514"]]
+  [1m[36m (9.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/movies?notice=%7B%40movie.title%7D+was+submitted+successfully%21
+Completed 302 Found in 72ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/movies?notice=%7B%40movie.title%7D+was+submitted+successfully%21" for 127.0.0.1 at 2016-06-24 11:41:58 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"notice"=>"{@movie.title} was submitted successfully!"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%'))
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 4]]
+  Rendered movies/index.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:42:05 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%%')) AND (UPPER(movies.'director') LIKE UPPER('%%')) AND (runtime_in_minutes )[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 4]]
+  Rendered movies/index.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 39.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:43:37 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE (runtime_in_minutes )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 4]]
+  Rendered movies/index.html.erb within layouts/application (22.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 55ms (Views: 46.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:43:37 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:43:37 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:43:37 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:43:37 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:43:37 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:43:37 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:43:37 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:43:37 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:43:37 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:43:37 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:43:37 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:43:37 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:43:37 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:44:05 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (runtime_in_minutes )[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 4]]
+  Rendered movies/index.html.erb within layouts/application (12.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 36ms (Views: 34.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:44:05 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:44:05 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:44:05 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:44:05 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:05 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:05 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:44:05 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:05 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:05 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:05 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:05 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:05 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:05 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:44:06 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (runtime_in_minutes )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 4]]
+  Rendered movies/index.html.erb within layouts/application (15.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:44:06 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:44:06 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:44:06 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:44:06 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:06 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:44:06 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:06 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:06 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:06 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:06 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:06 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:06 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:06 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:44:07 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (runtime_in_minutes )[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 4]]
+  Rendered movies/index.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 34ms (Views: 30.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:44:07 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:44:07 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:44:07 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:44:07 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:44:07 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:07 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:07 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:07 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:07 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:07 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:07 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:07 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:44:07 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:45:13 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (10.1ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined method `each' for #<ActiveRecord::QueryMethods::WhereChain:0x007f87da06bb98>):
+    25: </div>
+    26: <% end %>
+    27: <hr>
+    28: <% @movies.each do |movie| %>
+    29:   <%= link_to image_tag(movie.poster_image.medium), movie_path(movie) %>
+    30:   <h2><%= link_to movie.title, movie_path(movie) %> | <%= movie.review_average %>/10</h2>
+    31:   <h3><%= formatted_date(movie.release_date) %></h3>
+  app/views/movies/index.html.erb:28:in `_app_views_movies_index_html_erb__230953323226366319_70110727582160'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (28.2ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:45:27 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (9.2ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (undefined method `each' for #<ActiveRecord::QueryMethods::WhereChain:0x007f87cc845340>):
+    25: </div>
+    26: <% end %>
+    27: <hr>
+    28: <% @movies.each do |movie| %>
+    29:   <%= link_to image_tag(movie.poster_image.medium), movie_path(movie) %>
+    30:   <h2><%= link_to movie.title, movie_path(movie) %> | <%= movie.review_average %>/10</h2>
+    31:   <h3><%= formatted_date(movie.release_date) %></h3>
+  app/views/movies/index.html.erb:28:in `_app_views_movies_index_html_erb__230953323226366319_70110727582160'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (29.5ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:45:36 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE (runtime_in_minutes )
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 4]]
+  Rendered movies/index.html.erb within layouts/application (19.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 53ms (Views: 44.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:45:37 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:45:37 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:45:37 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:45:37 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:45:37 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:45:37 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:45:37 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:45:37 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:45:37 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:45:37 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:45:37 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:45:37 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:45:37 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:45:46 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (10.6ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (undefined method `each' for #<ActiveRecord::QueryMethods::WhereChain:0x007f87cd5b56b0>):
+    25: </div>
+    26: <% end %>
+    27: <hr>
+    28: <% @movies.each do |movie| %>
+    29:   <%= link_to image_tag(movie.poster_image.medium), movie_path(movie) %>
+    30:   <h2><%= link_to movie.title, movie_path(movie) %> | <%= movie.review_average %>/10</h2>
+    31:   <h3><%= formatted_date(movie.release_date) %></h3>
+  app/views/movies/index.html.erb:28:in `_app_views_movies_index_html_erb__230953323226366319_70110727582160'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.0ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.8ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (30.5ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:46:03 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 4]]
+  Rendered movies/index.html.erb within layouts/application (16.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 34.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:46:03 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:46:03 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:46:03 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:46:03 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:03 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:46:03 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:03 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:03 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:03 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:03 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:03 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:03 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:03 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:46:28 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (runtime_in_minutes )[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 4]]
+  Rendered movies/index.html.erb within layouts/application (16.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 45ms (Views: 38.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:46:28 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:46:28 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:46:28 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:46:28 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:46:28 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:28 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:28 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:28 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:28 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:28 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:28 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:28 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:28 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:46:30 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE (runtime_in_minutes )
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 4]]
+  Rendered movies/index.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:46:30 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:46:30 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:46:30 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:46:30 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:30 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:46:30 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:30 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:30 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:30 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:30 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:30 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:30 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:46:30 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:48:03 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.7ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 4]]
+  Rendered movies/index.html.erb within layouts/application (18.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 47ms (Views: 39.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:48:03 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:48:03 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:48:03 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:48:03 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:48:03 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:48:03 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:48:03 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:48:03 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:48:03 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:48:03 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:48:03 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:48:03 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:48:03 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:49:17 -0700
+
+SyntaxError (/home/tristan/LHL/w5/rotten_mangoes/app/controllers/movies_controller.rb:72: syntax error, unexpected ',', expecting ')'
+...UPPER(movies.?) LIKE UPPER(?)", field, "%#{params[field]}%")...
+...                               ^
+/home/tristan/LHL/w5/rotten_mangoes/app/controllers/movies_controller.rb:72: syntax error, unexpected ')', expecting &. or :: or '[' or '.'
+...", field, "%#{params[field]}%") if params[field].present?
+...                               ^
+/home/tristan/LHL/w5/rotten_mangoes/app/controllers/movies_controller.rb:73: syntax error, unexpected keyword_end, expecting ')'):
+  app/controllers/movies_controller.rb:72: syntax error, unexpected ',', expecting ')'
+  app/controllers/movies_controller.rb:72: syntax error, unexpected ')', expecting &. or :: or '[' or '.'
+  app/controllers/movies_controller.rb:73: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (41.6ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:49:59 -0700
+
+SyntaxError (/home/tristan/LHL/w5/rotten_mangoes/app/controllers/movies_controller.rb:72: syntax error, unexpected ',', expecting ')'
+...PER(movies.$1) LIKE UPPER($2)", [field, "%#{params[field]}%"...
+...                               ^):
+  app/controllers/movies_controller.rb:72: syntax error, unexpected ',', expecting ')'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.8ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (30.7ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:50:29 -0700
+
+SyntaxError (/home/tristan/LHL/w5/rotten_mangoes/app/controllers/movies_controller.rb:72: syntax error, unexpected ',', expecting keyword_end
+...PER(movies.$1) LIKE UPPER($2)", [field, "%#{params[field]}%"...
+...                               ^):
+  app/controllers/movies_controller.rb:72: syntax error, unexpected ',', expecting keyword_end
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (30.9ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:51:01 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies"
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `field' for #<MoviesController:0x007f87d9d0ce48>):
+  app/controllers/movies_controller.rb:72:in `field_query'
+  app/controllers/movies_controller.rb:6:in `block in index'
+  app/controllers/movies_controller.rb:5:in `each'
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.0ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.1ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (29.2ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:51:15 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 4]]
+  Rendered movies/index.html.erb within layouts/application (22.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 68ms (Views: 60.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:51:15 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:51:15 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:51:15 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:51:15 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:51:15 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:51:15 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:51:15 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:51:15 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:51:15 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:51:15 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:51:15 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:51:15 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:51:15 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=Under+90+minutes&commit=Search" for 127.0.0.1 at 2016-06-24 11:51:18 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"Under 90 minutes", "commit"=>"Search"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE (runtime_in_minutes < 90)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 4]]
+  Rendered movies/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=Bat&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:51:21 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"Bat", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/movies_controller.rb:73:in `[]'
+  app/controllers/movies_controller.rb:73:in `field_query'
+  app/controllers/movies_controller.rb:6:in `block in index'
+  app/controllers/movies_controller.rb:5:in `each'
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (31.0ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=Bat&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:51:37 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"Bat", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/movies_controller.rb:73:in `[]'
+  app/controllers/movies_controller.rb:73:in `field_query'
+  app/controllers/movies_controller.rb:6:in `block in index'
+  app/controllers/movies_controller.rb:5:in `each'
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (30.7ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=Bat&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:51:38 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"Bat", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/movies_controller.rb:73:in `[]'
+  app/controllers/movies_controller.rb:73:in `field_query'
+  app/controllers/movies_controller.rb:6:in `block in index'
+  app/controllers/movies_controller.rb:5:in `each'
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.0ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.1ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (31.6ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=Bat&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:55:35 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"Bat", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies"
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `sanitize_sql_array' for #<MoviesController:0x007f87ccb82cd8>):
+  app/controllers/movies_controller.rb:73:in `field_query'
+  app/controllers/movies_controller.rb:6:in `block in index'
+  app/controllers/movies_controller.rb:5:in `each'
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.6ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.0ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (28.7ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=Bat&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:55:37 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"Bat", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `sanitize_sql_array' for #<MoviesController:0x007f87d9166918>):
+  app/controllers/movies_controller.rb:73:in `field_query'
+  app/controllers/movies_controller.rb:6:in `block in index'
+  app/controllers/movies_controller.rb:5:in `each'
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (8.9ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.9ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/tristan/.rvm/gems/ruby-2.3.0-stable/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (37.3ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=Bat&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:56:15 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"Bat", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%Bat%'))
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  Rendered movies/index.html.erb within layouts/application (14.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 33.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:56:15 -0700
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:56:15 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:56:15 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:56:15 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:56:15 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:56:15 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:56:15 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:56:15 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:56:15 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:56:15 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:56:15 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:56:15 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:56:15 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=Bat&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:56:16 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"Bat", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%Bat%'))
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  Rendered movies/index.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:56:16 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:56:16 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:56:16 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:56:16 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:56:16 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:56:16 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:56:16 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:56:16 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:56:16 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:56:16 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:56:16 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:56:16 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:56:16 -0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:56:20 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 4]]
+  Rendered movies/index.html.erb within layouts/application (10.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=%27+trouble&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:56:29 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"' trouble", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (UPPER(movies.'title') LIKE UPPER('%'' trouble%'))[0m
+  Rendered movies/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:56:32 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 4]]
+  Rendered movies/index.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&director=&runtime_in_minutes=&commit=Search" for 127.0.0.1 at 2016-06-24 11:57:17 -0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "director"=>"", "runtime_in_minutes"=>"", "commit"=>"Search"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 4]]
+  Rendered movies/index.html.erb within layouts/application (19.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 49ms (Views: 42.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/movies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:57:17 -0700
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:57:17 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:57:17 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-24 11:57:17 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-24 11:57:17 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-24 11:57:17 -0700
+
+
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:57:17 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-24 11:57:17 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-24 11:57:17 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:57:17 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:57:17 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-24 11:57:17 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-06-24 11:57:17 -0700
