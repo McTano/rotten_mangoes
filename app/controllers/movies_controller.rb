@@ -2,10 +2,8 @@ class MoviesController < ApplicationController
   
   def index
     @movies = Movie.all
-    [:title, :director].each do |field|
-    @movies = @movies.matches(field, "%#{params[field]}%".upcase) if params[field].present?
-    end
-    @movies = selected_runtime(@movies)
+    @movies = @movies.matches("%#{params[:keyword]}%".upcase) if params[:keyword].present?
+    @movies = @movies.runtime_between(params[:minimum_runtime], params[:maximum_runtime])
   end
 
   def show
@@ -52,19 +50,6 @@ class MoviesController < ApplicationController
     params.require(:movie).permit(
       :title, :release_date, :director, :runtime_in_minutes, :poster_image, :description
       )
-  end
-
-  def selected_runtime(movies)
-      case params[:runtime_in_minutes]
-      when "Under 90 minutes"
-        movies.runtime_under(90)
-      when "Between 90 and 120 minutes"
-        movies.runtime_between(90, 120)
-      when "Over 120 minutes"
-        movies.runtime_over(120)
-      else
-        movies
-      end
   end
 
 end

@@ -18,20 +18,23 @@ class Movie < ActiveRecord::Base
   validate :release_date_is_in_the_past
 
   class << self
-    def matches(field, query)
-      where("UPPER(#{field}) LIKE ?", query)
-    end
-
-    def runtime_under(max)
-      where("runtime_in_minutes < ?", max)
-    end
-    
-    def runtime_between(min, max)
-      where(runtime_in_minutes: (min)..(max))
+    def matches(keyword)
+      where('(UPPER("title") LIKE :keyword) OR (UPPER("director") LIKE :keyword)', keyword: keyword)
     end
 
     def runtime_over(min)
-      where("runtime_in_minutes < ?", min)
+      where("runtime_in_minutes >= ?", min)
+    end
+
+    def runtime_under(max)
+      where("runtime_in_minutes <= ?", max)
+    end
+    
+    def runtime_between(min, max)
+      result = self
+      result = result.runtime_over(min) if min.present?
+      result = result.runtime_under(max) if max.present?
+      result.all
     end
   end
 
